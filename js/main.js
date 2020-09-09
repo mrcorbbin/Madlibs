@@ -42,6 +42,48 @@ This process is politically called _4_-_5_.
             {type:"adverb",id:2},
         ]
     },
+    {
+        content : `
+
+        Albert Einstein was a German-born _0_ _1_ who developed
+        the theory of _2_, one of the two pillars of modern _3_.
+        His _4_ is also known for its _5_ on the philosophy of _6_.
+
+
+        `,
+        blanks : [
+            {type:"adv/noun",id:0},
+            {type:"verb -d",id:1},
+            {type:"noun",id:2},
+            {type:"noun",id:3},
+            {type:"noun",id:4},
+            {type:"noun",id:5},
+            {type:"noun",id:6},
+        ]
+    },
+    {
+        content : `
+
+        OUR _0_ <br>
+
+        All of your _0_ needs can be _1_ by our _0_
+        experts. Our _2_ arrive on-site to get the _0_ job done with
+        _3_ _4_. We have two _5_ _6_ and a _7_. with access to _8_,
+        if needed.
+
+        `,
+        blanks : [
+            {type:"noun",id:0},
+            {type:"verb -d",id:1},
+            {type:"plural noun",id:2},
+            {type:"adj",id:3},
+            {type:"noun",id:4},
+            {type:"noun",id:5},
+            {type:"plural noun",id:6},
+            {type:"noun",id:7},
+            {type:"plural noun/adj",id:8},
+        ]
+    },
 ]
 
 var editor_template = $("#tmp_editor").html();
