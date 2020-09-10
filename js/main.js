@@ -84,6 +84,90 @@ This process is politically called _4_-_5_.
             {type:"plural noun/adj",id:8},
         ]
     },
+
+    {
+        content : `
+
+MY HANDS WERE _0_ again.
+
+_1_ down at the floor to avoid the blinding _2_ _3_, I was
+supposedly one of the best in the _4_, but it just didn’t register.
+My partner Alicia _5_ as we stood in line with nine other _6_,
+all chosen from over 1,000 _7_ from 29 countries and four
+continents.
+
+        `,
+        blanks : [
+            {type:"verb -ing",id:0},
+            {type:"verb -ing",id:1},
+            {type:"adj",id:2},
+            {type:"noun",id:3},
+            {type:"noun",id:4},
+            {type:"verb -d",id:5},
+            {type:"plural noun",id:6},
+            {type:"plural noun",id:7},
+        ]
+    },
+
+
+    {
+        content : `
+_0_ are a part of nature. Think about _1_. If you look at Huygens,
+_1_ is a wave, as confirmed by the _2_ experiments. But along comes
+Albert Einstein and he discovers that _1_ behaves like _3_, too.
+        `,
+        blanks : [
+            {type:"noun",id:0},
+            {type:"noun",id:1},
+            {type:"adj",id:2},
+            {type:"noun",id:3},
+        ]
+    },
+
+
+    {
+        content : `
+
+        “The whole history of the world is summed up in the fact that,
+        when nations are _0_, they are not always _1_, and when they
+        _2_, they are no longer _3_.”
+
+        <br>
+        <br>
+        — Winston Churchill
+
+        `,
+        blanks : [
+            {type:"adj/verb -ing",id:0},
+            {type:"adj/verb -ing",id:1},
+            {type:"adj/verb -ing",id:2},
+            {type:"adj/verb -ing",id:3},
+        ]
+    },
+
+
+    {
+        content : `
+
+        “_0_ your time in improving _1_ by other men’s _2_ so
+        that you shall _3_ easily by what others have _4_ hard for.”
+        
+        <br>
+        <br>
+        — Winston Churchill
+
+        `,
+        blanks : [
+            {type:"verb",id:0},
+            {type:"noun",id:1},
+            {type:"noun/plural noun",id:2},
+            {type:"verb",id:3},
+            {type:"verb -d",id:4},
+        ]
+    },
+
+
+
 ]
 
 var editor_template = $("#tmp_editor").html();
