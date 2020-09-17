@@ -151,7 +151,7 @@ Albert Einstein and he discovers that _1_ behaves like _3_, too.
 
         “_0_ your time in improving _1_ by other men’s _2_ so
         that you shall _3_ easily by what others have _4_ hard for.”
-        
+
         <br>
         <br>
         — Winston Churchill
