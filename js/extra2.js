@@ -1,5 +1,5 @@
 
-var letter_set = "spanish"
+var letter_set = "english"
 
 var VOWEL_SOUNDS = {
     "normal" : "a,e,i,o,u,y",
@@ -90,11 +90,11 @@ function oneIn(n,fn,_fn){
 
 
 
-var vowels = new Set(VOWEL_SOUNDS["spanish"||letter_set]);
-var vowels_secondary = new Set(VOWEL_SOUNDS["swedish"||letter_set]);
-var consonants = new Set(CONSONANT_START["swedish"||letter_set]);
-var consonants_mid = new Set(CONSONANT_MID["english"||letter_set]);
-var consonants_end = new Set(CONSONANT_END["spanish"||letter_set]);
+var vowels = new Set(VOWEL_SOUNDS[letter_set]);
+var vowels_secondary = new Set(VOWEL_SOUNDS[letter_set]);
+var consonants = new Set(CONSONANT_START[letter_set]);
+var consonants_mid = new Set(CONSONANT_MID[letter_set]);
+var consonants_end = new Set(CONSONANT_END[letter_set]);
 
 var morphemes = null;
 var verb_morphemes = null;
