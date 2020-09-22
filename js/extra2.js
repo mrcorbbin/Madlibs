@@ -1,36 +1,62 @@
 
-var letter_set = "english"
+var letter_set = "spanish"
 
 var VOWEL_SOUNDS = {
     "normal" : "a,e,i,o,u,y",
     "swedish" : "a,e,i,o,u,y,é,ä,ö,å,öj,ej,ig",
+    "danish" : "a,e,i,o,u,y,æ,ø,å,øj,ej",
+    "english" : "a,e,i,o,u,ey",
+    "spanish" : "a,e,i,o,u,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui",
+    "french" : "a,e,i,o,u,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui,iu,eiu,eau,io,eo,œ,ê,ô",
+    "japanese" : "a,e,i,o,u,ei,ai",
+    "russian" : "а,е,и,о,у,ы",
+}
+
+var SECONDARY_VOWEL_SOUNDS = {
+    "normal" : "a,e,i,o,u,y",
+    "swedish" : "a,e,i,o,u,y,é,ä,ö,å,öj,ej,ig,aj",
+    "danish" : "a,e,i,o,u,y,æ,ø,å,øj,ej,ig",
     "english" : "a,e,i,o,u,ey,ie,ee,oo,ea,oa,ou,ia,iu,au,ei,oi,oy",
+    "french" : "a,e,i,o,u,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui,iu,eiu,eau,eo,io,œ,ê,ô",
     "spanish" : "a,e,i,o,u,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui",
     "japanese" : "a,e,i,o,u,ei,ai",
+    "russian" : "а,е,и,о,у,ы",
 }
+
+
+
 
 var CONSONANT_START = {
     "normal" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z",
-    "swedish" : "b,d,f,g,h,j,k,l,m,n,p,kv,r,s,t,v,x,st,stj,sj,sk,skr,tr,pr,kr,vr,dr,br,fr,gr,hj,pl,fl,gl,kl,bl,mn,tj,lj,dj,fj,pj,mj,vj,str,ck,sv,sl,sm,sp,spl,spr,str",
-    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z",
+    "swedish" : "b,d,f,g,h,j,k,l,m,n,p,kv,r,s,t,v,x,st,stj,sj,sk,skr,tr,pr,kr,vr,dr,br,fr,gr,hj,pl,fl,gl,kl,bl,mn,tj,lj,dj,fj,pj,mj,vj,str,sv,sl,sm,sp,spl,spr,str",
+    "danish" : "b,d,f,g,h,j,k,l,m,n,p,kv,r,s,t,v,x,st,stj,sj,sk,skr,tr,pr,kr,vr,dr,br,fr,gr,hj,pl,fl,gl,kl,bl,mn,tj,lj,dj,fj,pj,mj,vj,str,ck,sv,sl,sm,sp,spl,spr,str",
+    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,qu,r,s,t,v,w,st,sk,skr,tr,pr,cr,wr,dr,br,fr,gr,pl,fl,gl,cl,bl,tj,str,sv,sl,sm,sp,spl,spr,str",
+    "french" : "b,c,d,f,g,h,j,k,l,m,n,p,qu,r,s,t,v,w,st,tr,pr,cr,vr,dr,br,fr,gr,pl,fl,gl,cl,bl,sm,sp",
     "spanish" : "b,c,d,f,g,h,j,l,m,n,p,qu,r,s,t,v,x,z,bl,br,ch,cr,dr,fl,fr,ff,gl,gr,ll,pr,pl,est,tr,tl",
-    "japanese" : "",
+    "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z",
+    "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ,сптк,дк,дж,др,дп,тп,пт,всп,ст,вк,вр,кп",
 }
 
 var CONSONANT_MID = {
     "normal" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z",
     "swedish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,rg,rs,rt,rl,rp,ng,",
-    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,gg,ch,ll,mm,nn,pp,rr,ss,tt,zz,str,st,sl,sm,sn,sp,spr,spl,sh,sk,ph,pl,pr,pt,gr,gl,lg,rg,tr,rt,lp,lm,ln,lt,ld,lf,nd,nt,mpt,th,ch,rn,rp,rf,rd,tch,pt",
+    "danish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,rg,rs,rt,rl,rp,ng,",
+    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,gg,ch,ll,mm,nn,pp,rr,ss,tt,zz,str,st,sl,sm,sn,sp,spr,spl,sh,sk,ph,pl,pr,pt,gr,gl,lg,rg,tr,rt,lp,lm,ln,lt,ld,lf,nd,nt,mpt,th,ch,rn,rp,rf,rd,tch,pt,rst,der",
+    "french" : "b,c,d,f,g,h,j,k,l,m,n,p,qu,r,s,t,v,w,st,tr,pr,cr,vr,dr,br,fr,gr,pl,fl,gl,cl,bl,sm,sp",
     "spanish" : "b,c,d,f,g,h,j,l,m,n,ñ,p,qu,r,s,t,v,x,z,bl,br,ch,cr,cc,nn,pp,ld,lv,lz,ll,p,rr,rd,rg,rc,rs,rp,rm,rl,rt,rv,rn,rqu",
-    "japanese" : "a,e,i,o,u,y,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui",
+    "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z,-",
+    "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ",
 }
 
 var CONSONANT_END = {
     "normal" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z",
     "swedish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,is",
-    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,gg,ch,ll,r,ss,tt,zz,ng,ing,tion,st,rt,rld,lp,lm,ln,rln,rn,rs,rp,rd,ld,ls,th,sh,rk",
-    "spanish" : "b,c,d,f,g,h,j,l,m,ñ,n,p,qu,r,s,t,v,x,z,ste,nde,ndo,nd,nda,lp",
-    "japanese" : "a,e,i,o,u,y,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui",
+    "danish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,is",
+    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,ck,ch,ll,r,ss,ng,ing,tion,st,rt,rld,lp,lm,ln,rln,rn,rs,rp,rd,ld,ls,th,sh,rk,rst,fy,ly,mb,ft,ght,le,ler,some,ial",
+    "french" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,ch,ll,r,ss,tt,ng,ing,tion,st,rt,rld,lp,lm,ln,rln,rn,rs,rp,rd,ld,ls,th,sh,rk,rst,fy,ly,mb,ft,ght,le,ler,some,ial",
+    "spanish" : "b,c,d,f,g,h,j,l,m,n,p,qu,r,s,t,v,x,z,ste,nde,ndo,nd,nda,lp",
+    "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z",
+    "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ",
 }
 
 function Set(s,_delim,_nosplit){
@@ -43,8 +69,15 @@ function Set(s,_delim,_nosplit){
         a = s;
     }
     for (var i = 0; i < a.length; i++) {
-        this.items.push([a[i],1]);
-        this.cache[a[i]] = i;
+        if (!(a[i] in this.cache)) {
+            this.items.push([a[i],1]);
+            this.cache[a[i]] = this.items.length;
+        }
+        else {
+            if (this.items[this.cache[a[i]]]) {
+                this.items[this.cache[a[i]]][1] += 0.01
+            }
+        }
     }
     this.weight = this.items.length;
 }
@@ -61,6 +94,16 @@ Set.prototype.add = function(idx) {
 Set.prototype.scale = function(size) {
     for (var i = 0; i < size; i++) {
         this.add(this.w_rand());
+    }
+    this.setProportion();
+    this.items.sort(function(a,b){
+        return (b[1] - a[1]);
+    })
+}
+
+Set.prototype.setProportion = function(){
+    for (var i = 0; i < this.items.length; i++) {
+        this.items[i][2] = ((this.items[i][1] / this.weight) * 100).toFixed(4) + "%";
     }
 }
 
@@ -91,30 +134,60 @@ function oneIn(n,fn,_fn){
 
 
 var vowels = new Set(VOWEL_SOUNDS[letter_set]);
-var vowels_secondary = new Set(VOWEL_SOUNDS[letter_set]);
+var vowels_secondary = new Set(SECONDARY_VOWEL_SOUNDS[letter_set]);
 var consonants = new Set(CONSONANT_START[letter_set]);
 var consonants_mid = new Set(CONSONANT_MID[letter_set]);
 var consonants_end = new Set(CONSONANT_END[letter_set]);
 
+soften(consonants,0.7)
+soften(consonants_end,1)
+soften(consonants_mid,1)
+
+function soften(__set__,amt){
+    var items = __set__.items;
+    for (var i = 0; i < items.length; i++) {
+        if ("bdfgkjcxmn".indexOf(items[i][0]) > -1) {
+            __set__.items[i][1] *= amt;
+        }
+    }
+}
+
 var morphemes = null;
 var verb_morphemes = null;
 var noun_morphemes = null;
+
+var verb_ending_morphemes = null;
+var verb_secondary_morphemes = null;
+var noun_secondary_morphemes = null;
 
 var verbs = null;
 var nouns = null;
 var adjectives = null;
 var adverbs = null;
 var adverbs = null;
+var prepositions = null;
 var structures = null;
 
 var words = null;
 
+// INDO-European word settings
+
+// var settings = {
+//     start_chance : 2,
+//     ending_chance : 7,
+//     secondary_phoneme_chance : 50,
+//     tertiary_phoneme_chance : 16,
+//     quaternary_phoneme_chance : 32,
+//     adverb_chance : 3,
+//     secondary_morpheme_chance : 1.3
+// }
+
 var settings = {
-    start_chance : 2,
-    ending_chance : 9,
-    secondary_phoneme_chance : 10,
-    tertiary_phoneme_chance : 16,
-    quaternary_phoneme_chance : 32,
+    start_chance : 1.8,
+    ending_chance : 2,
+    secondary_phoneme_chance : 67,
+    tertiary_phoneme_chance : 8,
+    quaternary_phoneme_chance : 4,
     adverb_chance : 3,
     secondary_morpheme_chance : 1.3
 }
@@ -148,7 +221,7 @@ function morpheme(){
         },addEnding)
     })
 
-    oneIn(2,addEnding)
+    oneIn(4,addEnding)
     return s;
 }
 
@@ -160,46 +233,92 @@ function generateMorphemes(l) {
     return new Set(tmp.join(","));
 }
 
-function generateWordSet(__set__,l){
+function generateWordSet(__set__,l,_secondary_morphemes){
     var tmp = [];
     for (var i = 0; i < l; i++) {
         var s = __set__.getRandom();
         oneIn(settings.secondary_morpheme_chance,function(){
-            s += __set__.getRandom();
+            if (_secondary_morphemes) {
+                s += _secondary_morphemes.getRandom();
+            }
+            else {
+                s += __set__.getRandom();
+            }
         })
         tmp.push(s);
     }
     return new Set(tmp.join(","));
 }
 
-function generateAll(a) {
+function generateWordFromMorphemeSets(a){
+
+}
+
+function generateAll(a,_joiner) {
     var tmp = [];
     for (var i = 0; i < a.length; i++) {
         tmp.push(a[i].getRandom());
     }
-    return tmp.join(" ");
+    return tmp.join(_joiner||" ");
 }
 
-function init(){
-    vowels.scale(30000);
-    vowels_secondary.scale(30000);
-    consonants.scale(75000);
-    consonants_mid.scale(70500);
-    consonants_end.scale(40000);
-    morphemes = generateMorphemes(400);
-    verb_morphemes = generateMorphemes(200);
-    noun_morphemes = generateMorphemes(200);
-    morphemes.scale(1000000)
-    verb_morphemes.scale(1000000)
-    noun_morphemes.scale(1000000)
-    nouns = generateWordSet(verb_morphemes,2300);
+function printReadout(__set__) {
+    var tmp = [];
+    for (var i = 0; i < __set__.items.length; i++) {
+        tmp.push(__set__.items[i][0] + "\t" + __set__.items[i][1] + "\n");
+    }
+    console.log(tmp.join(""));
+
+}
+
+function init2(){
+
+    vowels.scale(2000);
+    vowels_secondary.scale(4000);
+    consonants.scale(700000);
+    consonants_mid.scale(700000);
+    consonants_end.scale(400000);
+
+    morphemes = generateMorphemes(140);
+    morphemes.scale(3000000)
+
+    verb_morphemes = generateMorphemes(80);
+    noun_morphemes = generateMorphemes(80);
+
+    verb_secondary_morphemes = generateMorphemes(100);
+    verb_ending_morphemes = generateMorphemes(100);
+    noun_secondary_morphemes = generateMorphemes(100);
+
+    verb_morphemes.scale(3000000)
+    verb_ending_morphemes.scale(3000000)
+    noun_morphemes.scale(3000000)
+
+    verb_secondary_morphemes.scale(30000)
+    noun_secondary_morphemes.scale(30000)
+
+    nouns = generateWordSet(noun_morphemes,450,noun_secondary_morphemes);
     nouns.scale(300000)
-    verbs = generateWordSet(verb_morphemes,1200);
+
+    prepositions = generateWordSet(verb_morphemes,30);
+    prepositions.scale(30000)
+
+    verbs = generateWordSet(verb_morphemes,300,verb_secondary_morphemes);
     verbs.scale(100000)
-    adverbs = generateWordSet(morphemes,500);
+
+    
+
+    adverbs = generateWordSet(morphemes,200);
     adverbs.scale(100000)
-    adjectives = generateWordSet(morphemes,1000);
+
+    adjectives = generateWordSet(morphemes,130);
     adjectives.scale(10000)
+
+    // printReadout(morphemes);
+    // printReadout(consonants);
+    // printReadout(consonants_mid);
+    // printReadout(consonants_end);
+    // printReadout(consonants_morphemes);
+
 
     structures = [
         [nouns, verbs, nouns],
@@ -208,13 +327,18 @@ function init(){
         [adjectives, nouns, adverbs, verbs, nouns],
         [adjectives, nouns, verbs, adverbs, adjectives, nouns],
         [nouns, verbs, adverbs, verbs],
-        [adverbs, nouns, verbs]
+        [adverbs, nouns, verbs],
+        [nouns, prepositions ,nouns, verbs],
+        [nouns, verbs, prepositions, morphemes, nouns, verbs],
+        [morphemes, adjectives, nouns, verbs, prepositions, morphemes, prepositions, nouns, adverbs, verbs],
+
     ]
 
     words = new Set(structures,"m",true);
     words.scale(1400)
 
 }
+
 
 
 function generateParagraph(l) {
@@ -224,18 +348,27 @@ function generateParagraph(l) {
         oneIn(1.7,function(){
             s += ", " +generateAll(words.getRandom());
         })
+        oneIn(3,function(){
+            s += ", " +generateAll(words.getRandom());
+        })
+        s=s.charAt(0).toUpperCase() + s.slice(1);
         tmp.push(s);
 
 
     }
-    return tmp.join(". ");
+    return tmp.join(" . ");
 }
 
 
-init()
+init2()
 
 
-console.log(generateParagraph(7))
+console.log(generateParagraph(3))
+console.log(generateParagraph(10))
+console.log("vowels",vowels.items);
+console.log("consonants",consonants);
+console.log("consonants",consonants_mid);
+console.log(consonants_end);
 
 
 
