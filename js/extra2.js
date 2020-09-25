@@ -1,5 +1,5 @@
 
-var letter_set = "finnish"
+var letter_set = "judoon"
 
 var VOWEL_SOUNDS = {
     "normal" : "a,e,i,o,u,y",
@@ -12,6 +12,7 @@ var VOWEL_SOUNDS = {
     "finnish" : "a,e,i,o,u,y,ä,ü,ö,aa,ee,ii,oo,uu,yy,ää,üü,öö,äi,öi,ei,ui,yi,au,öy,ey,äy",
     "japanese" : "a,e,i,o,u,ei,ai",
     "russian" : "а,е,и,о,у,ы",
+    "judoon" : "oe "
 }
 
 var SECONDARY_VOWEL_SOUNDS = {
@@ -24,6 +25,7 @@ var SECONDARY_VOWEL_SOUNDS = {
     "spanish" : "a,e,i,o,u,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui",
     "japanese" : "a,e,i,o,u,ei,ai",
     "russian" : "а,е,и,о,у,ы",
+    "judoon" : "oe "
 }
 
 
@@ -39,23 +41,25 @@ var CONSONANT_START = {
     "spanish" : "b,c,d,f,g,h,j,l,m,n,p,qu,r,s,t,v,x,z,bl,br,ch,cr,dr,fl,fr,ff,gl,gr,ll,pr,pl,est,tr,tl",
     "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z",
     "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ,сптк,дк,дж,др,дп,тп,пт,всп,ст,вк,вр,кп",
+    "judoon" : "t,p,r,m,f,k,s,n",
 }
 
 var CONSONANT_MID = {
     "normal" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z",
-    "swedish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,rg,rs,rt,rl,rp,ng,",
+    "swedish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,rg,rs,rt,rl,rp,ng,rv,rm,mp,rp,lv",
     "danish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,rg,rs,rt,rl,rp,ng,",
-    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,gg,ch,ll,mm,nn,pp,rr,ss,tt,zz,str,st,sl,sm,sn,sp,spr,spl,sh,sk,ph,pl,pr,pt,gr,gl,lg,rg,tr,rt,lp,lm,ln,lt,ld,lf,nd,nt,mpt,th,ch,rn,rp,rf,rd,tch,pt,rst,der",
+    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,gg,ch,ll,mm,nn,pp,rr,ss,tt,zz,str,st,sl,sm,sn,sp,spr,spl,sh,sk,ph,pl,pr,pt,gr,gl,lg,rg,tr,rt,lp,lm,ln,lt,ld,lf,nd,nt,mpt,th,ch,rn,rp,rf,rd,tch,pt,rst,der,rve,lve",
     "french" : "b,c,d,f,g,h,j,k,l,m,n,p,qu,r,s,t,v,w,st,tr,pr,cr,vr,dr,br,fr,gr,pl,fl,gl,cl,bl,sm,sp",
-    "finnish" : "m,p,b,f,v,n,t,d,s,l,r,j,k,g,mm,pp,bb,ff,vv,nn,tt,dd,ss,ll,rr,kk,gg,nt,lt,rt",
+    "finnish" : "m,p,b,f,v,n,t,d,s,l,r,j,k,g,mm,pp,bb,ff,vv,nn,tt,dd,ss,ll,rr,kk,gg,nt,lt,rt,rp,mp",
     "spanish" : "b,c,d,f,g,h,j,l,m,n,ñ,p,qu,r,s,t,v,x,z,bl,br,ch,cr,cc,nn,pp,ld,lv,lz,ll,p,rr,rd,rg,rc,rs,rp,rm,rl,rt,rv,rn,rqu",
     "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z,-",
     "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ",
+    "judoon" : "t,p,r,m,f,k,s,n",
 }
 
 var CONSONANT_END = {
     "normal" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z",
-    "swedish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,is",
+    "swedish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,is,rv,lv,",
     "danish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,is",
     "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,ck,ch,ll,r,ss,ng,ing,tion,st,rt,rld,lp,lm,ln,rln,rn,rs,rp,rd,ld,ls,th,sh,rk,rst,fy,ly,mb,ft,ght,le,ler,some,ial,rsh,rth,rch",
     "french" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,ch,ll,r,ss,tt,ng,ing,tion,st,rt,rld,lp,lm,ln,rln,rn,rs,rp,rd,ld,ls,th,sh,rk,rst,fy,ly,mb,ft,ght,le,ler,some,ial",
@@ -63,6 +67,7 @@ var CONSONANT_END = {
     "spanish" : "b,c,d,f,g,h,j,l,m,n,p,qu,r,s,t,v,x,z,ste,nde,ndo,nd,nda,lp",
     "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z",
     "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ",
+    "judoon" : "t,p,r,m,f,k,s,n",
 }
 
 function Set(s,_delim,_nosplit){
@@ -189,13 +194,15 @@ var words = null;
 // }
 
 var settings = {
-    start_chance : 1.8,
-    ending_chance : 2.5,
+    start_chance : 1,
+    ending_chance : 0,
     secondary_phoneme_chance : 20,
     tertiary_phoneme_chance : 8,
     quaternary_phoneme_chance : 4,
     adverb_chance : 3,
-    secondary_morpheme_chance : 1.3
+    vowel_ending_chance : 1,
+    // ending_chance
+    // secondary_morpheme_chance : 1
 }
 
 
@@ -205,7 +212,7 @@ function morpheme(){
 
     function addEnding(){
         s += consonants_end.getRandom();
-        oneIn(6,function(){
+        oneIn(settings.vowel_ending_chance,function(){
             s += vowels.getRandom();
         })
     }
@@ -231,7 +238,7 @@ function morpheme(){
         },addEnding)
     })
 
-    oneIn(4,addEnding)
+    oneIn(0,addEnding)
     return s;
 }
 
@@ -282,7 +289,7 @@ function generateAll(a,_joiner) {
 function printReadout(__set__) {
     var tmp = [];
     for (var i = 0; i < __set__.items.length; i++) {
-        tmp.push(__set__.items[i][0] + "\t" + __set__.items[i][1] + "\n");
+        tmp.push(__set__.items[i][0] + "\t" + __set__.items[i][1] + "\t" + __set__.items[i][2] + "\n");
     }
     console.log(tmp.join(""));
 
@@ -290,17 +297,17 @@ function printReadout(__set__) {
 
 function init2(){
 
-    vowels.scale(2000);
-    vowels_secondary.scale(4000);
-    consonants.scale(700000);
-    consonants_mid.scale(700000);
-    consonants_end.scale(400000);
+    // vowels.scale(1000);
+    // vowels_secondary.scale(1000);
+    // consonants.scale(7000000);
+    // consonants_mid.scale(7000000);
+    // consonants_end.scale(4000000);
 
     morphemes = generateMorphemes(140);
     morphemes.scale(3000000)
 
-    verb_morphemes = generateMorphemes(80);
-    noun_morphemes = generateMorphemes(80);
+    verb_morphemes = generateMorphemes(1000);
+    noun_morphemes = generateMorphemes(1000);
 
     verb_secondary_morphemes = generateMorphemes(100);
     verb_ending_morphemes = generateMorphemes(100);
