@@ -297,11 +297,11 @@ function printReadout(__set__) {
 
 function init2(){
 
-    // vowels.scale(1000);
-    // vowels_secondary.scale(1000);
-    // consonants.scale(7000000);
-    // consonants_mid.scale(7000000);
-    // consonants_end.scale(4000000);
+    vowels.scale(1000);
+    vowels_secondary.scale(1000);
+    consonants.scale(7000000);
+    consonants_mid.scale(7000000);
+    consonants_end.scale(4000000);
 
     morphemes = generateMorphemes(140);
     morphemes.scale(3000000)
