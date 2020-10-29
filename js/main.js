@@ -287,11 +287,17 @@ $(function(){
             init();
         })
 
+    $(".icon-button[data-target='words']")
+        .click(function(){
+            $("#main").html(generateParagraph(40));
+            init();
+        })
     $("")
 
     items = sentences[current_sentence].blanks;
 
-    $("#main").html(Mustache.render(editor_template,{items:items}))
+    // $("#main").html(Mustache.render(editor_template,{items:items}))
+    $("#main").html(generateParagraph(40))
 
     init();
 })

@@ -1,5 +1,5 @@
 
-var letter_set = "danish"
+var letter_set = "normal"
 
 var VOWEL_SOUNDS = {
     "normal" : "a,e,i,o,u,y",
@@ -465,21 +465,6 @@ console.log("vowels",vowels.items);
 console.log("consonants",consonants);
 console.log("consonants",consonants_mid);
 console.log(consonants_end);
-
-
-var word_cloud = new Set(`Joy,Sharing,Traditional,Accountability,Alertness,Amusement,Assertiveness,Awareness,Balance,Beauty,Boldness,Certainty,Challenge,Clear,Communication,Community,Confidence,Connection,Consciousness,Consistency,Contentment,Conviction,Courage,Courtesy,Creation,Creativity,Curiosity,Dedication,Development,Devotion,Dignity,Discipline,Discovery,Efficiency,Empathy,Energy,Enjoyment,Enthusiasm,Exploration,Expressive,Foresight,Freedom,Friendship,Fun,Generosity,Grace,Gratitude,Growth,Happiness,Harmony,Health,Honesty,Honor,Humility,Humor,Imagination,Improvement,Innovation,Inquisitive,Insightful,Inspiring,Integrity,Intensity,Knowledge,Learning,Liberty,Love,Meaning,Moderation,Passion,Patience,Performance,Persistence,Playfulness,Poise,Present,Purpose,Reflective,Respect,Restraint,Service,Simplicity,Sincerity,Skill,Skillfulness,Smart,Solitude,Spirit,Spirituality,Structure,Sustainability,Talent,Teamwork,Temperance,Thankful,Timeliness,Tolerance,Tranquility,Truth,Understanding,Unity,Vision,Wisdom,Wonder`);
-
-//
-// word_cloud.scale(2000000);
-//
-//
-// var p = [];
-//
-// for (var i = 0; i < 1000; i++) {
-//     p.push(word_cloud.getRandom());
-// }
-
-// console.log(p.join(" "))
 
 
 
