@@ -1,5 +1,5 @@
 
-var letter_set = "judoon"
+var letter_set = "danish"
 
 var VOWEL_SOUNDS = {
     "normal" : "a,e,i,o,u,y",
@@ -12,7 +12,9 @@ var VOWEL_SOUNDS = {
     "finnish" : "a,e,i,o,u,y,ä,ü,ö,aa,ee,ii,oo,uu,yy,ää,üü,öö,äi,öi,ei,ui,yi,au,öy,ey,äy",
     "japanese" : "a,e,i,o,u,ei,ai",
     "russian" : "а,е,и,о,у,ы",
-    "judoon" : "oe "
+    "judoon" : "oe ",
+    "kthongis" : "ang ,angtk ,arkt ,alfp ,amt ,arfpt ,arpt ,arp , atkt",
+    "nugot" : "a,e,o,u,y,aa,ee,ii,oo,uu,yy"
 }
 
 var SECONDARY_VOWEL_SOUNDS = {
@@ -25,7 +27,9 @@ var SECONDARY_VOWEL_SOUNDS = {
     "spanish" : "a,e,i,o,u,ay,oy,uy,ua,ie,ia,au,io,iu,ue,uo,ui",
     "japanese" : "a,e,i,o,u,ei,ai",
     "russian" : "а,е,и,о,у,ы",
-    "judoon" : "oe "
+    "judoon" : "oe ",
+    "kthongis" : "ang ,atk ,akt ,alp ,ampt ,arfpt ,arpt ,arp , athkt",
+    "nugot" : "a,e,o,u,y,aa,ee,ii,oo,uu,yy"
 }
 
 
@@ -42,19 +46,24 @@ var CONSONANT_START = {
     "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z",
     "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ,сптк,дк,дж,др,дп,тп,пт,всп,ст,вк,вр,кп",
     "judoon" : "t,p,r,m,f,k,s,n",
+    "kthongis" : "c,f,h,j,k,l,m,n,p,qu,r,s,t,st,tr,pr,cr,dr,br,fr,gr,pl,fl,gl,cl,bl,sm,sp,kth,rtk,ft,pt,xk,x,ch,tl,lp,pl,ts,skt,tks,skt,pst,pts,tps,tsp",
+    "nugot" : "m,n,b,d,g,l,z,v,j",
 }
 
 var CONSONANT_MID = {
     "normal" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z",
     "swedish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,rg,rs,rt,rl,rp,ng,rv,rm,mp,rp,lv",
     "danish" : "b,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,x,pp,nn,mm,lm,rn,rm,lp,ln,ll,rr,tt,dd,ck,sk,sp,lk,gg,ss,bb,ff,nd,rk,rg,rs,rt,rl,rp,ng,",
-    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,gg,ch,ll,mm,nn,pp,rr,ss,tt,zz,str,st,sl,sm,sn,sp,spr,spl,sh,sk,ph,pl,pr,pt,gr,gl,lg,rg,tr,rt,lp,lm,ln,lt,ld,lf,nd,nt,mpt,th,ch,rn,rp,rf,rd,tch,pt,rst,der,rve,lve",
+    "english" : "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z,bb,ck,dd,gg,ch,ll,mm,nn,pp,rr,ss,tt,zz,str,st,sl,sm,sn,sp,spr,spl,sh,sk,ph,pl,pr,pt,gr,gl,lg,rg,tr,rt,lp,lm,ln,lt,ld,lf,nd,nt,mpt,th,ch,rn,rp,rf,rd,tch,pt,rst,der,rve,lve,rf,rl",
     "french" : "b,c,d,f,g,h,j,k,l,m,n,p,qu,r,s,t,v,w,st,tr,pr,cr,vr,dr,br,fr,gr,pl,fl,gl,cl,bl,sm,sp",
     "finnish" : "m,p,b,f,v,n,t,d,s,l,r,j,k,g,mm,pp,bb,ff,vv,nn,tt,dd,ss,ll,rr,kk,gg,nt,lt,rt,rp,mp",
     "spanish" : "b,c,d,f,g,h,j,l,m,n,ñ,p,qu,r,s,t,v,x,z,bl,br,ch,cr,cc,nn,pp,ld,lv,lz,ll,p,rr,rd,rg,rc,rs,rp,rm,rl,rt,rv,rn,rqu",
     "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z,-",
     "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ",
     "judoon" : "t,p,r,m,f,k,s,n",
+    "kthongis" : "c,f,h,j,k,l,m,n,p,qu,r,s,t,st,tr,pr,cr,dr,br,fr,gr,pl,fl,gl,cl,bl,sm,sp,kth,rtk,ft,pt,xk,x,ch,tl,lp,pl,ts,skt,tks,skt,pst,pts,tps,tsp",
+    "nugot" : "m,n,b,d,g,l,z,v,j",
+
 }
 
 var CONSONANT_END = {
@@ -68,6 +77,8 @@ var CONSONANT_END = {
     "japanese" : "b,d,g,h,j,k,ch,m,n,p,r,s,sh,t,ts,w,z",
     "russian" : "б,ц,д,ф,г,ч,й,к,л,м,н,п,я,р,с,т,в,ш,х,з,ж,ь,ъ",
     "judoon" : "t,p,r,m,f,k,s,n",
+    "kthongis" : "c,f,h,j,k,l,m,n,p,qu,r,s,t,st,tr,pr,cr,dr,br,fr,gr,pl,fl,gl,cl,bl,sm,sp,kth,rtk,ft,pt,xk,x,ch,tl,lp,pl,ts,skt,tks,skt,pst,pts,tps,tsp",
+    "nugot" : "p,k,f,t,s,x,k,lp,lt,rl,r,t,lk,rt,ft,lf,st,rf,rp"
 }
 
 function Set(s,_delim,_nosplit){
@@ -80,9 +91,12 @@ function Set(s,_delim,_nosplit){
         a = s;
     }
     for (var i = 0; i < a.length; i++) {
-        if (!(a[i] in this.cache)) {
+        if (!(a[i] in this.cache) && !(a[i][0] instanceof Set)) {
             this.items.push([a[i],1]);
             this.cache[a[i]] = this.items.length;
+        }
+        else if (a[i][0] instanceof Set) {
+            this.items.push([a[i],1]);
         }
         else {
             if (this.items[this.cache[a[i]]]) {
@@ -102,15 +116,41 @@ Set.prototype.add = function(idx) {
     this.weight++;
 };
 
+Set.prototype.shuffle = function () {
+    var tmp = [];
+    while (this.items.length > 0) {
+        var r = Math.floor(Math.random() * this.items.length);
+        tmp.push(this.items[r]);
+        this.items.splice(r,1);
+    }
+    this.items = tmp;
+};
+
 Set.prototype.scale = function(size) {
-    for (var i = 0; i < size; i++) {
-        this.add(this.w_rand());
+    this.shuffle();
+    var offset = (Math.random() * 30) >> 0;
+    var start = (Math.random() * 1000000);
+    this.weight = 0;
+    for (var i = 0; i < this.items.length; i++) {
+        this.items[i][1] = start / (i + offset);
+        this.weight += this.items[i][1];
     }
     this.setProportion();
-    this.items.sort(function(a,b){
-        return (b[1] - a[1]);
-    })
 }
+
+// +function helloWorld() {
+//     return "";
+// }
+
+// Set.prototype.scale = function(size) {
+//     for (var i = 0; i < size; i++) {
+//         this.add(this.w_rand());
+//     }
+//     this.setProportion();
+//     this.items.sort(function(a,b){
+//         return (b[1] - a[1]);
+//     })
+// }
 
 Set.prototype.setProportion = function(){
     for (var i = 0; i < this.items.length; i++) {
@@ -194,14 +234,14 @@ var words = null;
 // }
 
 var settings = {
-    start_chance : 1,
-    ending_chance : 0,
-    secondary_phoneme_chance : 20,
+    start_chance : 2,
+    ending_chance : 3,
+    secondary_phoneme_chance : 4,
     tertiary_phoneme_chance : 8,
     quaternary_phoneme_chance : 4,
     adverb_chance : 3,
-    vowel_ending_chance : 1,
-    // ending_chance
+    vowel_ending_chance : 1000,
+    // ending_chance : .2
     // secondary_morpheme_chance : 1
 }
 
@@ -238,7 +278,7 @@ function morpheme(){
         },addEnding)
     })
 
-    oneIn(0,addEnding)
+    oneIn(settings.ending_chance,addEnding)
     return s;
 }
 
@@ -297,11 +337,11 @@ function printReadout(__set__) {
 
 function init2(){
 
-    vowels.scale(1000);
-    vowels_secondary.scale(1000);
-    consonants.scale(7000000);
-    consonants_mid.scale(7000000);
-    consonants_end.scale(4000000);
+    vowels.scale();
+    vowels_secondary.scale();
+    consonants.scale();
+    consonants_mid.scale();
+    consonants_end.scale();
 
     morphemes = generateMorphemes(140);
     morphemes.scale(3000000)
@@ -313,20 +353,20 @@ function init2(){
     verb_ending_morphemes = generateMorphemes(100);
     noun_secondary_morphemes = generateMorphemes(100);
 
-    verb_morphemes.scale(3000000)
-    verb_ending_morphemes.scale(3000000)
-    noun_morphemes.scale(3000000)
+    verb_morphemes.scale(300000)
+    verb_ending_morphemes.scale(300000)
+    noun_morphemes.scale(300000)
 
     verb_secondary_morphemes.scale(30000)
     noun_secondary_morphemes.scale(30000)
 
-    nouns = generateWordSet(noun_morphemes,450,noun_secondary_morphemes);
-    nouns.scale(300000)
+    nouns = generateWordSet(noun_morphemes,5030,noun_secondary_morphemes);
+    nouns.scale()
 
-    prepositions = generateWordSet(verb_morphemes,30);
+    prepositions = generateWordSet(verb_morphemes,303);
     prepositions.scale(30000)
 
-    verbs = generateWordSet(verb_morphemes,300,verb_secondary_morphemes);
+    verbs = generateWordSet(verb_morphemes,8000,verb_secondary_morphemes);
     // var verb_s = [];
 
     for (var i = 0; i < 100; i++) {
@@ -337,10 +377,10 @@ function init2(){
 
     verbs.scale(100000)
 
-    adverbs = generateWordSet(morphemes,200);
+    adverbs = generateWordSet(morphemes,300);
     adverbs.scale(100000)
 
-    adjectives = generateWordSet(morphemes,130);
+    adjectives = generateWordSet(morphemes,10004);
     adjectives.scale(10000)
 
     // printReadout(morphemes);
@@ -427,9 +467,19 @@ console.log("consonants",consonants_mid);
 console.log(consonants_end);
 
 
+var word_cloud = new Set(`Joy,Sharing,Traditional,Accountability,Alertness,Amusement,Assertiveness,Awareness,Balance,Beauty,Boldness,Certainty,Challenge,Clear,Communication,Community,Confidence,Connection,Consciousness,Consistency,Contentment,Conviction,Courage,Courtesy,Creation,Creativity,Curiosity,Dedication,Development,Devotion,Dignity,Discipline,Discovery,Efficiency,Empathy,Energy,Enjoyment,Enthusiasm,Exploration,Expressive,Foresight,Freedom,Friendship,Fun,Generosity,Grace,Gratitude,Growth,Happiness,Harmony,Health,Honesty,Honor,Humility,Humor,Imagination,Improvement,Innovation,Inquisitive,Insightful,Inspiring,Integrity,Intensity,Knowledge,Learning,Liberty,Love,Meaning,Moderation,Passion,Patience,Performance,Persistence,Playfulness,Poise,Present,Purpose,Reflective,Respect,Restraint,Service,Simplicity,Sincerity,Skill,Skillfulness,Smart,Solitude,Spirit,Spirituality,Structure,Sustainability,Talent,Teamwork,Temperance,Thankful,Timeliness,Tolerance,Tranquility,Truth,Understanding,Unity,Vision,Wisdom,Wonder`);
 
+//
+// word_cloud.scale(2000000);
+//
+//
+// var p = [];
+//
+// for (var i = 0; i < 1000; i++) {
+//     p.push(word_cloud.getRandom());
+// }
 
-
+// console.log(p.join(" "))
 
 
 
