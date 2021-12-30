@@ -168,6 +168,7 @@ Albert Einstein and he discovers that _1_ behaves like _3_, too.
 
 
 
+
 ]
 
 var editor_template = $("#tmp_editor").html();

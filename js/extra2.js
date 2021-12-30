@@ -1,5 +1,5 @@
 
-var letter_set = "normal"
+var letter_set = "english"
 
 var VOWEL_SOUNDS = {
     "normal" : "a,e,i,o,u,y",
@@ -234,13 +234,13 @@ var words = null;
 // }
 
 var settings = {
-    start_chance : 2,
-    ending_chance : 3,
-    secondary_phoneme_chance : 4,
-    tertiary_phoneme_chance : 8,
-    quaternary_phoneme_chance : 4,
-    adverb_chance : 3,
-    vowel_ending_chance : 1000,
+    start_chance : 1,
+    ending_chance : 8,
+    secondary_phoneme_chance : 12,
+    tertiary_phoneme_chance : 40,
+    quaternary_phoneme_chance : 49,
+    adverb_chance : 5,
+    vowel_ending_chance : 10,
     // ending_chance : .2
     // secondary_morpheme_chance : 1
 }
@@ -270,11 +270,16 @@ function morpheme(){
             oneIn(settings.quaternary_phoneme_chance,function(){
                 s += consonants_mid.getRandom();
                 s += vowels_secondary.getRandom();
-                oneIn(settings.quaternary_phoneme_chance,function(){
-                    s += consonants_mid.getRandom();
-                    s += vowels_secondary.getRandom();
-                },addEnding)
             },addEnding)
+        },addEnding)
+    })
+
+    oneIn(4,function(){
+        s += consonants_mid.getRandom();
+        s += vowels_secondary.getRandom();
+        oneIn(settings.tertiary_phoneme_chance,function(){
+            s += consonants_mid.getRandom();
+            s += vowels_secondary.getRandom();
         },addEnding)
     })
 
@@ -343,8 +348,8 @@ function init2(){
     consonants_mid.scale();
     consonants_end.scale();
 
-    morphemes = generateMorphemes(140);
-    morphemes.scale(3000000)
+    morphemes = generateMorphemes(300);
+    morphemes.scale()
 
     verb_morphemes = generateMorphemes(1000);
     noun_morphemes = generateMorphemes(1000);
@@ -436,7 +441,6 @@ function init_roots() {
 
 }
 
-
 function generateParagraph(l) {
     var tmp = [];
     for (var i = 0; i < l; i++) {
@@ -455,9 +459,7 @@ function generateParagraph(l) {
     return tmp.join(" . ");
 }
 
-
 init2()
-
 
 console.log(generateParagraph(3))
 console.log(generateParagraph(10))
